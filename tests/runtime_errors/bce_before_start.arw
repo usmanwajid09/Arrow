@@ -1,0 +1,2 @@
+-- EXPECT: index -1 out of range for array of length 3
+fn main() { [1, 2, 3] => a; loop i in 0..len(a) { a[i - 1] => show; } }

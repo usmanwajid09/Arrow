@@ -1,0 +1,9 @@
+-- every access below is provably in range: the compiler removes all of these bounds checks
+fn main() {
+  [10, 20, 30, 40] => a;
+  loop i in 0..len(a) { a[i] => show; }                 -- i is in [0, len)
+  loop i in 0..len(a) - 1 { a[i + 1] - a[i] => show; }  -- i + 1 is in [1, len)
+  loop i in 1..len(a) { a[i - 1] => show; }             -- i - 1 is in [0, len - 1)
+  loop i in 0..len(a) { a[i] * 2 => a[i]; }             -- reads and writes
+  a[3] => show;                                         -- constant index: the check is kept
+}

@@ -1,0 +1,11 @@
+-- benchmark: array loops whose bounds checks the compiler can remove
+fn main() {
+  2000000 => n;
+  new[n] => a;
+  loop i in 0..len(a) { i * 7 % 1000 => a[i]; }
+  0 => total;
+  loop r in 0..200 {
+    loop i in 0..len(a) - 1 { total + a[i] + a[i + 1] => total; }
+  }
+  total => show;
+}
