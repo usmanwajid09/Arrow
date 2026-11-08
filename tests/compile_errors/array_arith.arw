@@ -1,0 +1,2 @@
+-- EXPECT: must be integer, but it is array
+fn main() { [1, 2] + 1 => x; }

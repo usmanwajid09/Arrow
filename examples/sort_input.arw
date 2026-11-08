@@ -1,0 +1,17 @@
+-- reads a count n and then n integers from standard input, prints them sorted
+-- try:   ./arrow-interp examples/sort_input.arw < examples/numbers.txt
+fn insertion(a[], n) {
+  loop i in 1..n {
+    a[i] => key;
+    i - 1 => j;
+    loop j >= 0 & a[j] > key { a[j] => a[j + 1];  j - 1 => j; }
+    key => a[j + 1];
+  }
+}
+fn main() {
+  read() => n;
+  new[n] => a;
+  loop i in 0..n { read() => a[i]; }
+  insertion(a, n);
+  loop i in 0..n { a[i] => show; }
+}

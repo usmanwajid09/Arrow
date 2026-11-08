@@ -1,0 +1,2 @@
+-- EXPECT: must be array, but it is integer
+fn f(a[]) { } fn main() { f(5); }

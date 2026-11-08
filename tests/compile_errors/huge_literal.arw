@@ -1,0 +1,2 @@
+-- EXPECT: too large
+fn main() { 99999999999999999999 => x; }

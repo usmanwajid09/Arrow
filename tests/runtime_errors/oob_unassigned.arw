@@ -1,0 +1,2 @@
+-- EXPECT: index 0 out of range for array of length 0
+fn main() { 0 => c; when c { [1] => a; } a[0] => show; }

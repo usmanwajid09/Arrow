@@ -1,0 +1,2 @@
+-- EXPECT: is an integer, not an array
+fn main() { 3 => y; y[0] => show; }

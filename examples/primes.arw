@@ -1,0 +1,15 @@
+-- prints the prime numbers below 50 (trial division)
+fn is_prime(n) {
+  when n < 2 { give 0; }
+  2 => d;
+  loop d * d <= n {
+    when n % d == 0 { give 0; }
+    d + 1 => d;
+  }
+  give 1;
+}
+fn main() {
+  loop n in 2..50 {
+    when is_prime(n) { n => show; }
+  }
+}

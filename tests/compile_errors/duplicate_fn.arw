@@ -1,0 +1,2 @@
+-- EXPECT: defined more than once
+fn f() { } fn f() { } fn main() { }

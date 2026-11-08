@@ -1,0 +1,17 @@
+fn is_even(n) { when n == 0 { give 1; }  give is_odd(n - 1); }
+fn is_odd(n)  { when n == 0 { give 0; }  give is_even(n - 1); }
+fn fact(n) { when n <= 1 { give 1; }  give n * fact(n - 1); }
+fn ack(m, n) {
+  when m == 0 { give n + 1; }
+  when n == 0 { give ack(m - 1, 1); }
+  give ack(m - 1, ack(m, n - 1));
+}
+fn hanoi(n) { when n == 0 { give 0; }  give 2 * hanoi(n - 1) + 1; }
+fn sum_to(n) { when n == 0 { give 0; }  give n + sum_to(n - 1); }
+fn main() {
+  is_even(10) => show;  is_even(7) => show;  is_odd(7) => show;
+  fact(20) => show;
+  ack(2, 3) => show;
+  hanoi(10) => show;
+  sum_to(10000) => show;
+}

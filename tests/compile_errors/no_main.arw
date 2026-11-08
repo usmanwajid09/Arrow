@@ -1,0 +1,2 @@
+-- EXPECT: no 'main' function
+fn f() { give 1; }

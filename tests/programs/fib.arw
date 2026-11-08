@@ -1,0 +1,16 @@
+-- recursive and iterative Fibonacci
+fn fib(n) {
+  when n < 2 { give n; }
+  give fib(n - 1) + fib(n - 2);
+}
+
+fn fib_iter(n) {
+  0 => a;  1 => b;
+  loop i in 0..n { a + b => t;  b => a;  t => b; }
+  give a;
+}
+
+fn main() {
+  loop n in 0..21 { fib(n) => show; }
+  fib_iter(90) => show;
+}

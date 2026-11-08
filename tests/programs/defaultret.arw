@@ -1,0 +1,11 @@
+fn nothing() { 5 => x; }
+fn early(n) {
+  when n > 0 { give 10;  99 => show; }
+  give 20;
+}
+fn main() {
+  nothing() => show;
+  early(1) => show;
+  early(0) => show;
+  nothing();
+}

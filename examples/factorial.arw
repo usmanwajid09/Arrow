@@ -1,0 +1,8 @@
+-- recursion: n! for n = 0..15
+fn fact(n) {
+  when n <= 1 { give 1; }
+  give n * fact(n - 1);
+}
+fn main() {
+  loop n in 0..16 { fact(n) => show; }
+}

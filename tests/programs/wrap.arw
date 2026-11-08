@@ -1,0 +1,16 @@
+-- 64-bit integers wrap around (two's complement)
+fn main() {
+  9223372036854775807 + 1 => show;
+  4611686018427387904 * 2 => show;
+  0 - 9223372036854775807 - 1 => m;
+  m => show;
+  m - 1 => show;
+  -m => show;
+  -1 => minus_one;
+  m / minus_one => show;
+  m % minus_one => show;
+  m / 2 => show;
+  m % 10 => show;
+  9223372036854775807 / 10 => show;
+  1000000007 * 1000000007 => show;
+}

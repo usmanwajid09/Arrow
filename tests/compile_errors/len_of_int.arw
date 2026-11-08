@@ -1,0 +1,2 @@
+-- EXPECT: argument of len() must be array
+fn main() { 4 => n; len(n) => show; }

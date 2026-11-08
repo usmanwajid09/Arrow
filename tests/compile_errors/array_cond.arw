@@ -1,0 +1,2 @@
+-- EXPECT: condition of when must be integer
+fn main() { [1] => a; when a { } }

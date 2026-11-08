@@ -1,0 +1,27 @@
+-- Merge Sort in Arrow (recursive, uses a temporary array)
+fn merge(a[], tmp[], lo, mid, hi) {          -- merges a[lo..mid) and a[mid..hi)
+  lo => i;  mid => j;  lo => k;
+  loop i < mid & j < hi {
+    when a[i] <= a[j] { a[i] => tmp[k];  i + 1 => i; }
+    otherwise         { a[j] => tmp[k];  j + 1 => j; }
+    k + 1 => k;
+  }
+  loop i < mid { a[i] => tmp[k];  i + 1 => i;  k + 1 => k; }
+  loop j < hi  { a[j] => tmp[k];  j + 1 => j;  k + 1 => k; }
+  loop x in lo..hi { tmp[x] => a[x]; }
+}
+
+fn msort(a[], tmp[], lo, hi) {
+  when hi - lo < 2 { give 0; }
+  (lo + hi) / 2 => mid;
+  msort(a, tmp, lo, mid);
+  msort(a, tmp, mid, hi);
+  merge(a, tmp, lo, mid, hi);
+}
+
+fn main() {
+  [38, 27, 43, 3, 9, 82, 10, -5, 27, 0] => data;
+  new[len(data)] => tmp;
+  msort(data, tmp, 0, len(data));
+  loop k in 0..len(data) { data[k] => show; }
+}

@@ -1,0 +1,2 @@
+-- EXPECT: syntax error
+fn main() { 5 => x; 

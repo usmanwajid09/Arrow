@@ -1,0 +1,38 @@
+fn classify(n) {
+  when n < 0 { give -1; }
+  otherwise when n == 0 { give 0; }
+  otherwise when n < 10 { give 1; }
+  otherwise { give 2; }
+}
+fn find_pair(target) {
+  loop i in 1..10 {
+    loop j in i..10 {
+      when i * j == target { give i * 100 + j; }
+    }
+  }
+  give -1;
+}
+fn main() {
+  classify(-5) => show;  classify(0) => show;  classify(7) => show;  classify(1000) => show;
+  find_pair(42) => show;
+  find_pair(97) => show;
+  -- the end of a range is evaluated once, before the loop starts
+  3 => n;  0 => count;
+  loop k in 0..n { n + 1 => n;  count + 1 => count; }
+  count => show;  n => show;
+  -- empty and reversed ranges run zero times
+  0 => c;
+  loop k in 5..5 { c + 1 => c; }
+  loop k in 5..2 { c + 1 => c; }
+  c => show;
+  -- negative bounds
+  0 => s;
+  loop k in -3..2 { s + k => s; }
+  s => show;
+  -- the loop variable keeps its last value
+  loop m in 0..4 { }
+  m => show;
+  1 => p;
+  loop p < 1000 { p * 2 => p; }
+  p => show;
+}

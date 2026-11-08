@@ -1,0 +1,7 @@
+-- the smallest Arrow program: values flow left to right
+fn main() {
+  6 * 7 => answer;
+  answer => show;
+  [3, 1, 2] => v;
+  v[0] + v[1] + v[2] => show;
+}

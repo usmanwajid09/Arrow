@@ -1,0 +1,11 @@
+fn noisy(x) { x => show;  give x; }
+fn main() {
+  [1, 2, 3] => a;
+  0 & noisy(100) => show;
+  1 | noisy(200) => show;
+  1 & noisy(7) => show;
+  0 | noisy(8) => show;
+  3 => j;
+  j < 3 & a[j] > 0 => show;
+  j >= 3 | a[j] > 0 => show;
+}

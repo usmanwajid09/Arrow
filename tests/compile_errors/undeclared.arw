@@ -1,0 +1,2 @@
+-- EXPECT: used before it is assigned
+fn main() { x + 1 => y; }
