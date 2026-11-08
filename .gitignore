@@ -1,0 +1,8 @@
+build/
+arrow-interp
+arrowc
+tests/tmp/
+*.o
+*.ll
+arrow_project/
+*.zip

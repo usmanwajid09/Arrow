@@ -1,0 +1,2 @@
+-- EXPECT: cannot assign to loop variable
+fn main() { loop i in 0..3 { 5 => i; } }

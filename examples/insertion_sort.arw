@@ -1,0 +1,18 @@
+-- Insertion Sort in Arrow
+fn insertion(a[], n) {
+  loop i in 1..n {
+    a[i] => key;
+    i - 1 => j;
+    loop j >= 0 & a[j] > key {       -- & short-circuits, so a[-1] is never read
+      a[j] => a[j + 1];
+      j - 1 => j;
+    }
+    key => a[j + 1];
+  }
+}
+
+fn main() {
+  [5, 2, 9, 1, 7] => data;
+  insertion(data, len(data));
+  loop k in 0..len(data) { data[k] => show; }   -- prints 1 2 5 7 9, one per line
+}

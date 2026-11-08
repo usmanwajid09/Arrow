@@ -1,0 +1,4 @@
+-- EXPECT: call depth limit
+-- INTERP-ONLY
+fn f(n) { give f(n + 1); }
+fn main() { f(0) => show; }

@@ -1,0 +1,18 @@
+-- arrays are passed (and assigned) by reference
+fn fill(a[], v) { loop i in 0..len(a) { v => a[i]; } }
+fn bump(a[]) { a[0] + 1 => a[0]; }
+fn main() {
+  new[3] => x;
+  fill(x, 7);
+  x => y;
+  99 => y[1];
+  x[0] => show;  x[1] => show;  x[2] => show;
+  bump(x);
+  y[0] => show;
+  [1, 2, 3] => z;
+  z => x;
+  x[0] => show;
+  y[0] => show;
+  len(x) => show;
+  len(y) => show;
+}

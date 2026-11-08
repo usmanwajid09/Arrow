@@ -1,0 +1,2 @@
+-- EXPECT: must be integer, but it is array
+fn f(n) { } fn main() { f([1]); }

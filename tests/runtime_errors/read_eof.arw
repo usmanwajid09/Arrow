@@ -1,0 +1,2 @@
+-- EXPECT: read(): end of input
+fn main() { read() => x; x => show; }

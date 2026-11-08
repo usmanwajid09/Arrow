@@ -1,0 +1,2 @@
+-- EXPECT: takes 2 argument(s) but 1 given
+fn f(a, b) { give a; } fn main() { f(1) => x; }

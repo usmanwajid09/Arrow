@@ -1,0 +1,2 @@
+-- EXPECT: division by zero
+fn main() { 0 => z; 5 / z => show; }

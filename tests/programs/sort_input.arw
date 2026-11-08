@@ -1,0 +1,26 @@
+-- reads  n  and then n integers from standard input; sorts them two ways
+fn selection(a[], n) {
+  loop i in 0..n - 1 {
+    i => m;
+    loop j in i + 1..n { when a[j] < a[m] { j => m; } }
+    a[i] => t;  a[m] => a[i];  t => a[m];
+  }
+}
+fn bubble(a[], n) {
+  loop i in 0..n {
+    loop j in 0..n - 1 - i {
+      when a[j] > a[j + 1] { a[j] => t;  a[j + 1] => a[j];  t => a[j + 1]; }
+    }
+  }
+}
+fn main() {
+  read() => n;
+  new[n] => a;  new[n] => b;
+  loop i in 0..n { read() => a[i];  a[i] => b[i]; }
+  selection(a, n);
+  bubble(b, n);
+  0 => same;
+  loop i in 0..n { when a[i] == b[i] { same + 1 => same; } }
+  same => show;
+  loop i in 0..n { a[i] => show; }
+}

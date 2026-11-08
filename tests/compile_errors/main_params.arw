@@ -1,0 +1,2 @@
+-- EXPECT: must not take parameters
+fn main(x) { }

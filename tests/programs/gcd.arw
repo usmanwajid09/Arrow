@@ -1,0 +1,17 @@
+fn gcd(a, b) {
+  loop b != 0 { b => t;  a % b => b;  t => a; }
+  give a;
+}
+fn gcdr(a, b) {
+  when b == 0 { give a; }
+  give gcdr(b, a % b);
+}
+fn main() {
+  gcd(48, 18) => show;
+  gcd(17, 5) => show;
+  gcd(0, 9) => show;
+  gcd(1071, 462) => show;
+  gcdr(1071, 462) => show;
+  gcdr(270, 192) => show;
+  4 * 6 / gcd(4, 6) => show;
+}

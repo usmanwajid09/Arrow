@@ -1,0 +1,2 @@
+-- EXPECT: value given to show must be integer
+fn main() { [1] => a; a => show; }

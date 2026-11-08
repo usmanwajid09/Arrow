@@ -1,0 +1,50 @@
+-- pseudo-random data (a linear congruential generator): merge sort vs insertion sort
+fn merge(a[], tmp[], lo, mid, hi) {
+  lo => i;  mid => j;  lo => k;
+  loop i < mid & j < hi {
+    when a[i] <= a[j] { a[i] => tmp[k];  i + 1 => i; }
+    otherwise         { a[j] => tmp[k];  j + 1 => j; }
+    k + 1 => k;
+  }
+  loop i < mid { a[i] => tmp[k];  i + 1 => i;  k + 1 => k; }
+  loop j < hi  { a[j] => tmp[k];  j + 1 => j;  k + 1 => k; }
+  loop x in lo..hi { tmp[x] => a[x]; }
+}
+fn msort(a[], tmp[], lo, hi) {
+  when hi - lo < 2 { give 0; }
+  (lo + hi) / 2 => mid;
+  msort(a, tmp, lo, mid);
+  msort(a, tmp, mid, hi);
+  merge(a, tmp, lo, mid, hi);
+}
+fn insertion(a[], n) {
+  loop i in 1..n {
+    a[i] => key;  i - 1 => j;
+    loop j >= 0 & a[j] > key { a[j] => a[j + 1];  j - 1 => j; }
+    key => a[j + 1];
+  }
+}
+fn checksum(a[]) {
+  0 => s;
+  loop i in 0..len(a) { s + a[i] * (i % 7 + 1) => s; }
+  give s;
+}
+fn main() {
+  3000 => n;
+  new[n] => a;  new[n] => b;  new[n] => tmp;
+  12345 => seed;
+  loop i in 0..n {
+    (seed * 1103515245 + 12345) % 2147483648 => seed;
+    seed % 100000 => a[i];
+    a[i] => b[i];
+  }
+  msort(a, tmp, 0, n);
+  insertion(b, n);
+  0 => bad;
+  loop i in 0..n { when a[i] != b[i] { bad + 1 => bad; } }
+  loop i in 1..n { when a[i - 1] > a[i] { bad + 1 => bad; } }
+  bad => show;
+  a[0] => show;
+  a[n - 1] => show;
+  checksum(a) => show;
+}

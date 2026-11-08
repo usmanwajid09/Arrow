@@ -1,0 +1,2 @@
+-- EXPECT: undefined function 'nope'
+fn main() { nope(2); }

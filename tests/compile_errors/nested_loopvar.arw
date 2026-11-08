@@ -1,0 +1,2 @@
+-- EXPECT: already used by an enclosing loop
+fn main() { loop i in 0..3 { loop i in 0..2 { } } }

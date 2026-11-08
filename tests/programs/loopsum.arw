@@ -1,0 +1,9 @@
+-- a long-running loop (checks that the interpreter and compiled code agree on larger work)
+fn main() {
+  0 => s;
+  loop i in 0..2000000 { s + i * i % 7 => s; }
+  s => show;
+  1 => x;  0 => steps;
+  loop x != 0 & steps < 100 { (x * 31 + 7) % 1009 => x;  steps + 1 => steps; }
+  x => show;  steps => show;
+}

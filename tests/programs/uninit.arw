@@ -1,0 +1,7 @@
+-- variables that are never assigned at run time: integers are 0, arrays are empty
+fn main() {
+  0 => c;
+  when c { 5 => x;  [1, 2] => arr; }
+  x => show;
+  len(arr) => show;
+}

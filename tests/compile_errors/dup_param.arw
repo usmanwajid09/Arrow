@@ -1,0 +1,2 @@
+-- EXPECT: duplicate parameter
+fn f(a, a) { } fn main() { }

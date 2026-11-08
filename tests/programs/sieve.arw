@@ -1,0 +1,19 @@
+-- Sieve of Eratosthenes: how many primes are <= n ?
+fn count_primes(n) {
+  new[n + 1] => is;
+  loop i in 2..n + 1 { 1 => is[i]; }
+  0 => count;
+  loop i in 2..n + 1 {
+    when is[i] {
+      count + 1 => count;
+      i * i => j;
+      loop j <= n { 0 => is[j];  j + i => j; }
+    }
+  }
+  give count;
+}
+fn main() {
+  count_primes(100) => show;
+  count_primes(10000) => show;
+  count_primes(1000000) => show;
+}

@@ -1,0 +1,2 @@
+-- EXPECT: array 'q' is used before
+fn main() { 1 => q[0]; }

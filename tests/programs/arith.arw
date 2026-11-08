@@ -1,0 +1,31 @@
+-- operators, precedence, C-style truncating division
+fn main() {
+  2 + 3 * 4 => show;
+  (2 + 3) * 4 => show;
+  10 - 4 - 3 => show;
+  -2 * 3 => show;
+  7 % 4 => show;
+  17 / 5 => show;
+  -17 / 5 => show;
+  17 / -5 => show;
+  -17 % 5 => show;
+  17 % -5 => show;
+  1 | 0 & 0 => show;
+  ~0 => show;
+  ~5 => show;
+  3 < 4 == 1 => show;
+  5 == 5 & 2 < 3 => show;
+  ~(1 < 2) => show;
+  - -3 => show;
+  2 * -3 => show;
+  100 / 7 / 2 => show;
+  2 - -2 => show;
+  (5 > 3) + (2 > 3) => show;
+  -3 + 5 => show;
+  -(3 + 5) => show;
+  7 != 7 => show;
+  7 >= 7 => show;
+  7 <= 6 => show;
+  12 % 5 * 2 => show;
+  100 - 3 * 4 / 2 + 1 => show;
+}

@@ -1,0 +1,18 @@
+fn bsearch(a[], n, key) {
+  0 => lo;  n - 1 => hi;
+  loop lo <= hi {
+    (lo + hi) / 2 => mid;
+    when a[mid] == key { give mid; }
+    when a[mid] < key { mid + 1 => lo; } otherwise { mid - 1 => hi; }
+  }
+  give -1;
+}
+fn main() {
+  [1, 3, 5, 7, 9, 11, 13] => v;
+  bsearch(v, 7, 7) => show;
+  bsearch(v, 7, 1) => show;
+  bsearch(v, 7, 13) => show;
+  bsearch(v, 7, 4) => show;
+  bsearch(v, 7, 14) => show;
+  bsearch([], 0, 1) => show;
+}
